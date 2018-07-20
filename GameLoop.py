@@ -8,7 +8,7 @@ print("""\
 
 import sys, configparser
 import time
-import keyboard
+#import keyboard
 #LOADING SETTINGS
 config = configparser.ConfigParser()
 #Open file as writeable
@@ -45,22 +45,22 @@ simTime=0
 t=time.time()
 pr=False
 inc=False
-auto_simspeed = False
+auto_simspeed = True
 while True:
     # ========KEYBOARD FOR INCREMENTING SIM SPEED=========
 
-    if keyboard.is_pressed('i') and not inc:
-        variables['simulation_speed']+=2
-        inc=True
-    elif keyboard.is_pressed('d') and not inc and variables['simulation_speed']>2:
-        variables['simulation_speed']-=2
-        inc=True
-    elif keyboard.is_pressed('a') and not inc:
-        auto_simspeed=not auto_simspeed
-        inc=True
+#    if keyboard.is_pressed('i') and not inc:
+ #       variables['simulation_speed']+=2
+  #      inc=True
+  #  elif keyboard.is_pressed('d') and not inc and variables['simulation_speed']>2:
+  #      variables['simulation_speed']-=2
+  #      inc=True
+  #  elif keyboard.is_pressed('a') and not inc:
+  #      auto_simspeed=not auto_simspeed
+ #       inc=True
 
-    elif inc==True and not (keyboard.is_pressed('i') or keyboard.is_pressed('d') or keyboard.is_pressed('a')):
-        inc=False
+#    elif inc==True and not (keyboard.is_pressed('i') or keyboard.is_pressed('d') or keyboard.is_pressed('a')):
+ #       inc=False
 
 #========== TRAIN UPDATES =====================
 
@@ -80,7 +80,7 @@ while True:
         print('updates/sec: ',1 / (time.time() - t))
         print('simTime: ',timeString)
         print('num Trains: ',numTrains)
-        print("simSpeed: ",variables['simulation_speed'])
+        p: ",variables['simulation_speed'])
         print("TO AUTO TOGGLE SIM SPEED PRESS A, TO INC PRESS I, TO DEC PRES D")
     if auto_simspeed:
         variables['simulation_speed']=((1/(time.time()-t))/10)
