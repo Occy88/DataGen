@@ -80,7 +80,7 @@ while True:
         print('updates/sec: ',1 / (time.time() - t))
         print('simTime: ',timeString)
         print('num Trains: ',numTrains)
-        print( ",variables['simulation_speed']")
+        print( "simSpeed: ",variables['simulation_speed'])
         print("TO AUTO TOGGLE SIM SPEED PRESS A, TO INC PRESS I, TO DEC PRES D")
     if auto_simspeed:
         variables['simulation_speed']=((1/(time.time()-t))/10)
