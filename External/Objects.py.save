@@ -16,11 +16,10 @@ with open(cwd+'/WeightedGraph','r')as f:
 exception_dict={}
 route_dict={}
 people_dict={}
-
-with open(cwd+'/PeopleData','r')as f:
-    line=True
-    while line:
-        line=f.readline()
+#with open(cwd+'/PeopleData','r')as f:
+#    line=True
+#    while line:
+#        line=f.readline()
         if line:
             data=json.loads(line)
         key=''
@@ -41,7 +40,6 @@ with open(cwd+'/RouteData','r')as f:
         if line:
             data=json.loads(line)
         route_dict.update(data)
-
 with open(cwd+'/TrainLog','r')as f:
     line=True
     while line:
@@ -104,6 +102,7 @@ with open(cwd+'/TrainLog','r')as f:
     # with open(cwd + '/External/test', 'w')as f1:
     #     json.dump(off_stop_dict,f1)
     # print("+++++++++++++++++++++++++++++++++++++++++++++++++++")
+print(arrival_dict['High Barnet'])
 for stuff in off_stop_dict:
 
     if off_stop_dict[stuff]=='Waterloo':

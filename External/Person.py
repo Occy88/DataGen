@@ -1,5 +1,6 @@
+
 import random
-from External.Functions import getStationList,get_shortest_path
+from Functions import getStationList,get_shortest_path
 import time
 class Person():
     def __init__(self,id,station):
@@ -69,7 +70,13 @@ class Person():
             else:
 
                 t=time.time()
+              #  print("generating Route")
+             #   print(self.currentStation)
                 self.generateRoute(route_dict, self.currentStation)
+                if self.stationList == None:
+#                    print("No Routes",self.currentStation)
+                    return {"No Routes":self.currentStation}
+              #  print(self.stationList)
                 # print("time to gen route: ",t-time.time())
                 # print("==============NEW ROUTE================")
                 # print(self.currentStation,"==:==",stopStation)

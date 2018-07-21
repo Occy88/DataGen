@@ -1,5 +1,5 @@
-from External.Person import Person
-from External.Objects import *
+from Person import Person
+from Objects import *
 import random
 import json
 import os

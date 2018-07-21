@@ -1,6 +1,6 @@
-from External.Person import Person
-from External.Objects import *
-from External.Functions import get_shortest_path
+from Person import Person
+from Objects import *
+from Functions import get_shortest_path
 import random
 import json
 import os
@@ -74,7 +74,7 @@ def generateRoutes():
             f.write('\n')
 
 # print("people")
-# generatePeople()
+generatePeople()
 print("ROUTES")
 # generateRoutes()
 print("unhilight functions to generate above this comment if not generating")
