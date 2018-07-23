@@ -43,13 +43,13 @@ with open(cwd+'/RouteData','r')as f:
         route_dict.update(data)
 
 with open(cwd+'/TrainLog','r')as f:
-    line=True
+    line=False
     while line:
         line=f.readline()
         if line:
             data=json.loads(line)
-        if data['name']=='High Barnet':
-            print(data)
+        # if data['name']=='High Barnet':
+        #     print(data)
         if not data['name'] in arrival_dict:
             arrival_dict.update({data['name']:{}})
         if not data['id'] in off_stop_dict:

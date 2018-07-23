@@ -1,10 +1,11 @@
-from Person import Person
-from Objects import *
-from Functions import get_shortest_path
+from External.Person import Person
+from External.Objects import *
+from External.Functions import get_shortest_path
 import random
 import json
 import os
 import names
+
 cwd=os.getcwd()
 people_list=[]
 
@@ -20,7 +21,7 @@ def generatePeople():
             print(y)
             for a in range(0,10000):
                 y+=1
-                person_name=names.get_full_name(gender=random.choice(['male','female'])
+                person_name=names.get_full_name(gender=random.choice(['male','female']))
                 age_y = random.randint(1930,2010)
                 age_month = random.randint(1,12)
                 age_day = random.randint(0,28)
