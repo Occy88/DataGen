@@ -4,6 +4,7 @@ from Functions import get_shortest_path
 import random
 import json
 import os
+import names
 cwd=os.getcwd()
 people_list=[]
 
@@ -19,7 +20,15 @@ def generatePeople():
             print(y)
             for a in range(0,10000):
                 y+=1
-                dict={y:name}
+                person_name=names.get_full_name(gender=random.choice(['male','female'])
+                age_y = random.randint(1930,2010)
+                age_month = random.randint(1,12)
+                age_day = random.randint(0,28)
+                age=str(age_day)+'/'+str(age_month)+'/'+str(age_y)
+                dict={}
+                dict.update({'dob':age})
+                dict.update({'name':person_name})
+                dict.update({'station_name':name})
                 json.dump(dict,f)
                 f.write('\n')
 

@@ -1,0 +1,21 @@
+import json
+import sys, configparser
+import time
+import os
+import request
+import pprint
+import random
+import math
+ = pprint.PrettyPrinter(indent=2)
+host = 'http://localhost:5000'
+print('Create a card')
+for a in range(0,100):
+
+    card = {}
+    card['balance'] = random.randint(0,1000)
+    # Note passenger id is nested in a passenger
+    card['passenger'] = { 'id' : a } 
+    # Send the request
+    req = requests.post(host + '/cards', json = card)
+
+
